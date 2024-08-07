@@ -10,8 +10,9 @@ using System.Collections;
 using System.Reflection.Metadata;
 using System.Reflection;
 using Radore_OOP.Odevler.Odev1;
+using Radore_OOP.Odevler.Odev2;
 
-
+/*
 //ClassIsmi nesneAdi = new ClassAdi();
 Insan i = new Insan();
 i.adi = "büşra";
@@ -74,6 +75,7 @@ us.yaz(us.adi);
 Matematik m = new Matematik();
 int gelenDeger = m.topla(5, 5);
 Console.WriteLine("toplam: " + gelenDeger);
+*/
 
 /*
 //------------- ODEV1 ---------------
@@ -93,7 +95,8 @@ s.Calisanlar(s.unvan, s.maas);
 Console.WriteLine("Maaşların toplamı: " + (md.maas + gm.maas + pr.maas + s.maas));
 */
 
-// ---- ODEV1 ÇÖZÜM -----
+/*
+// ----- ODEV1 ÇÖZÜM -----
 GenelMud gm = new GenelMud();
 Mud md = new Mud();
 Programc pg = new Programc();
@@ -148,7 +151,7 @@ for (int y = 0; y < sayilar.Length; y++)
 }
 Console.WriteLine("Toplam: " + toplam);
 
-//çalışanların maaş toplamını hesaplama: (SORU2)
+//(SORU2)
 Calisan[] calisanlar = { gm, md, pg, s };
 double maasToplam = 0.0;
 for (int z = 0; z < calisanlar.Length; z++)
@@ -197,4 +200,21 @@ DbLog dbLog = new DbLog();
 XmlLog xmlLog = new XmlLog();
 JsonLog jsonLog = new JsonLog();
 Logger logger = new Logger(dbLog, xmlLog, jsonLog);
-logger.LogKaydet(LogType.Db, "303 nolu hata kodu oluştu");
+logger.LogKaydet(LogType.Db, "303 nolu hata kodu oluştu"); 
+*/
+
+//----- ODEV2 -----
+Bmw bmw = new Bmw();
+bmw.uc("bmw");
+bmw.yuz("bmw");
+bmw.git("bmw");
+Mercedes mrc = new Mercedes();
+mrc.uc("mercedes");
+mrc.yuz("mercedes");
+Porsche prs  = new Porsche();
+prs.git("porsche");
+double toplamBenzin = 0.0;
+toplamBenzin += bmw.benzinHarca();
+toplamBenzin += mrc.benzinHarca();
+toplamBenzin += prs.benzinHarca();
+Console.WriteLine("Toplam harcanan benzin: " +toplamBenzin);
