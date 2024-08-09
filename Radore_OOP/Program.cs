@@ -11,6 +11,7 @@ using System.Reflection.Metadata;
 using System.Reflection;
 using Radore_OOP.Odevler.Odev1;
 using Radore_OOP.Odevler.Odev2;
+using Radore_OOP.Odevler.Odev3;
 
 /*
 //ClassIsmi nesneAdi = new ClassAdi();
@@ -203,7 +204,7 @@ Logger logger = new Logger(dbLog, xmlLog, jsonLog);
 logger.LogKaydet(LogType.Db, "303 nolu hata kodu oluştu"); 
 */
 
-//----- ODEV2 -----
+//------ ODEV2 ------
 Bmw bmw = new Bmw();
 bmw.uc("bmw");
 bmw.yuz("bmw");
@@ -218,3 +219,11 @@ toplamBenzin += bmw.benzinHarca();
 toplamBenzin += mrc.benzinHarca();
 toplamBenzin += prs.benzinHarca();
 Console.WriteLine("Toplam harcanan benzin: " +toplamBenzin);
+
+//------ ODEV3 ------
+O_DbLog o_DbLog = new O_DbLog();
+O_XmlLog o_XmlLog = new O_XmlLog();
+O_JsonLog o_JsonLog = new O_JsonLog();
+O_LogType o_LogType = new O_LogType();
+Logger2 logger2 = new Logger2(o_LogType, o_JsonLog);
+logger2.LogKayit(O_LogType.Json, "303 nolu hata kodu oluştu");
