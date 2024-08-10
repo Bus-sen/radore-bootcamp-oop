@@ -12,6 +12,9 @@ using System.Reflection;
 using Radore_OOP.Odevler.Odev1;
 using Radore_OOP.Odevler.Odev2;
 using Radore_OOP.Odevler.Odev3;
+using Radore_OOP.Solid.iyi;
+using Radore_OOP.Solid;
+using Radore_OOP.Overrides;
 
 /*
 //ClassIsmi nesneAdi = new ClassAdi();
@@ -196,13 +199,19 @@ foreach (Personel personel in personelListesi)
 }
 Console.WriteLine("Toplam maaş: " + personelMaas);
 
-//logger
+// --- logger
+// kotu durum:
 DbLog dbLog = new DbLog();
 XmlLog xmlLog = new XmlLog();
 JsonLog jsonLog = new JsonLog();
 Logger logger = new Logger(dbLog, xmlLog, jsonLog);
 logger.LogKaydet(LogType.Db, "303 nolu hata kodu oluştu"); 
-*/
+
+// iyi durum (ODEV3 COZUM):
+DbLog2 dbLog2 = new DbLog2();
+XmlLog2 xmlLog2 = new XmlLog2();
+Logger logger = new Logger(xmlLog2);
+logger.LogKaydet("303 nolu hata kodu oluştu");
 
 //------ ODEV2 ------
 Bmw bmw = new Bmw();
@@ -227,3 +236,7 @@ O_JsonLog o_JsonLog = new O_JsonLog();
 O_LogType o_LogType = new O_LogType();
 Logger2 logger2 = new Logger2(o_LogType, o_JsonLog);
 logger2.LogKayit(O_LogType.Json, "303 nolu hata kodu oluştu");
+*/
+
+Child c = new Child();
+c.yaz();
