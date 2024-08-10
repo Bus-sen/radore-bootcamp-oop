@@ -11,11 +11,11 @@ namespace Radore_OOP.Odevler.Odev3
     public class Logger2
     {
         public O_LogType o_logType;
-        public ILog log;
-        public Logger2(O_LogType o_logType, ILog log)
+        public O_ILog o_log;
+        public Logger2(O_LogType o_logType, O_ILog o_log)
         {
             this.o_logType = o_logType;
-            this.log = log;
+            this.o_log = o_log;
         }
 
         public void LogKayit(O_LogType typ, string msg)
@@ -23,13 +23,13 @@ namespace Radore_OOP.Odevler.Odev3
             switch (typ)
             {
                 case O_LogType.Xml:
-                    log.LogYaz(msg);
+                    o_log.LogYaz(msg);
                     break;
                 case O_LogType.Db:
-                    log.LogYaz(msg);
+                    o_log.LogYaz(msg);
                     break;
                 case O_LogType.Json:
-                    log.LogYaz(msg);
+                    o_log.LogYaz(msg);
                     break;
             }
 

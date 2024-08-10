@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Radore_OOP.Odevler.Odev3
 {
-    public class O_JsonLog : ILog
+    public class O_JsonLog : O_ILog
     {
         public void LogYaz(string mesaj)
         {

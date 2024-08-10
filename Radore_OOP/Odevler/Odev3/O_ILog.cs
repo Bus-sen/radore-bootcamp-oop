@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Radore_OOP.Odevler.Odev3
 {
-    public interface ILog
+    public interface O_ILog
     {
 
         void LogYaz(string mesaj);
