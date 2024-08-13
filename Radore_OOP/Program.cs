@@ -15,6 +15,7 @@ using Radore_OOP.Odevler.Odev3;
 using Radore_OOP.Solid.iyi;
 using Radore_OOP.Solid;
 using Radore_OOP.Overrides;
+using Radore_OOP.Reflections;
 
 /*
 //ClassIsmi nesneAdi = new ClassAdi();
@@ -238,5 +239,19 @@ Logger2 logger2 = new Logger2(o_LogType, o_JsonLog);
 logger2.LogKayit(O_LogType.Json, "303 nolu hata kodu oluştu");
 */
 
-Child c = new Child();
-c.yaz();
+Type t = typeof(MyClass);
+MethodInfo[] mi = t.GetMethods(); //MyClass'daki her şeye erişebilir
+Console.WriteLine("Nesne adı: " + t.Name);
+foreach (MethodInfo info in mi)
+{
+    ParameterInfo[] pi = info.GetParameters();
+    Console.WriteLine("Metot adı: " + info.Name + " Dönüş tipi: " + info.ReturnType);
+    if(pi.Length > 0)
+    {
+        Console.WriteLine("Parametre var");
+    }
+    for (int iX = 0; iX < pi.Length; iX++)
+    {
+        Console.WriteLine(iX + 1 + ".parametre : Dönüş değeri: " + pi[iX].ParameterType.Name + " Adı: " + pi[iX].Name);
+    }
+}
